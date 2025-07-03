@@ -19,4 +19,11 @@ public class ScoreManager : MonoBehaviour
         score++;
         scoreText.text = "Score : " + score;
     }
+
+    public void ResetScore()
+    {
+        score = 0;
+        scoreText.text = "Score : " + score;
+    }
+
 }

@@ -3,7 +3,7 @@ using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 
 public class DisableSpawn : MonoBehaviour
 {
-    void Start()
+    public void disable()
     {
         ObjectSpawner.Instance.enableSpawn = false;   
     }

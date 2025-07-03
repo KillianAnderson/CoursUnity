@@ -25,9 +25,10 @@ public class Table : MonoBehaviour
         }
     }
 
-    private void ResetTable()
+    public void ResetTable()
     {
         ciblesTombees = 0;
+        hasSpawnedNextTable = false;
         foreach (var cible in cibles)
         {
             Rigidbody rb = cible.GetComponent<Rigidbody>();

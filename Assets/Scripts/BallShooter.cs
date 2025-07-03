@@ -17,4 +17,21 @@ public class BallShooter : MonoBehaviour
         Rigidbody rb = projectile.GetComponent<Rigidbody>();
         rb.AddForce(transform.forward * shootForce);
     }
+
+    void Update()
+    {
+        #if UNITY_EDITOR
+            if (canShoot && Input.GetMouseButtonDown(0))
+            {
+                ShootFromEditor();
+            }
+        #endif
+    }
+
+    private void ShootFromEditor()
+    {
+        GameObject projectile = Instantiate(projectilePrefab, transform.position, transform.rotation);
+        Rigidbody rb = projectile.GetComponent<Rigidbody>();
+        rb.AddForce(transform.forward * shootForce);
+    }
 }
