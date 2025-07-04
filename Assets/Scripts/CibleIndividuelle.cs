@@ -5,6 +5,7 @@ public class CibleIndividuelle : MonoBehaviour
     private bool dejaTouchee = false;
     private Vector3 positionInitiale;
     private Quaternion rotationInitiale;
+    public bool estSphere = false;
 
     void Start()
     {
@@ -22,15 +23,14 @@ public class CibleIndividuelle : MonoBehaviour
             dejaTouchee = true;
             ScoreManager.Instance.AddScore();
             Table table = GetComponentInParent<Table>();
-            if (table != null)
-                table.CibleTouchee();
+            table.CibleTouchee(this);
         }
     }
 
     public void ResetCible()
     {
         dejaTouchee = false;
-        
+
         transform.localPosition = positionInitiale;
         transform.localRotation = rotationInitiale;
     }

@@ -1,6 +1,5 @@
 using UnityEngine;
 using TMPro;
-using System;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -14,9 +13,9 @@ public class ScoreManager : MonoBehaviour
         Instance = this;
     }
 
-    public void AddScore()
+    public void AddScore(int point = 1)
     {
-        score++;
+        score += point;
         scoreText.text = "Score : " + score;
     }
 

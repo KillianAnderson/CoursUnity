@@ -835,10 +835,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 1844440399}
-  gameDuration: 10
+  gameDuration: 20
   restartButton: {fileID: 203985817}
   shooter: {fileID: 331264289}
-  table: {fileID: 0}
+  cibleSphere: {fileID: 5015868311999329764, guid: d3540613637644a4190a05dc94911ec8,
+    type: 3}
 --- !u!4 &214980866
 Transform:
   m_ObjectHideFlags: 0

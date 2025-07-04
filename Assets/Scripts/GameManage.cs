@@ -1,8 +1,5 @@
 using UnityEngine;
 using TMPro;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,15 +10,10 @@ public class GameManager : MonoBehaviour
     public GameObject restartButton;
     public BallShooter shooter;
 
-
-    void Start()
-    {
-        timeRemaining = gameDuration;
-    }
-
     public void StartGame()
     {
         gameIsRunning = true;
+        timeRemaining = gameDuration;
     }
 
     void Update()
@@ -61,5 +53,7 @@ public class GameManager : MonoBehaviour
         gameIsRunning = true;
         shooter.canShoot = true;
         restartButton.SetActive(false);
+        Table.Instance.ResetTable();
+        Table.Instance.cibleSphere.SetActive(true);
     }
 }

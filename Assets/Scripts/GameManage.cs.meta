@@ -1,2 +1,16 @@
 fileFormatVersion: 2
 guid: 799610a1cc7ff3a4fad7d1297226f7a1
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - timerText: {instanceID: 0}
+  - restartButton: {instanceID: 0}
+  - shooter: {instanceID: 0}
+  - cibleSphere: {fileID: 2866228529101027792, guid: d3540613637644a4190a05dc94911ec8,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

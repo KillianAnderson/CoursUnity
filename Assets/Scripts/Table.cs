@@ -3,20 +3,31 @@ using System.Collections.Generic;
 
 public class Table : MonoBehaviour
 {
+    public static Table Instance;
     private List<CibleIndividuelle> cibles = new List<CibleIndividuelle>();
     private int ciblesTombees = 0;
     private bool hasSpawnedNextTable = false;
-
+    public GameObject cibleSphere;
 
     void Start()
     {
         cibles.Clear();
         cibles.AddRange(GetComponentsInChildren<CibleIndividuelle>());
+        Instance = this;
     }
 
-    public void CibleTouchee()
+    public void CibleTouchee(CibleIndividuelle cible)
     {
         ciblesTombees++;
+
+        if (cible.name.Contains("Sphere"))
+        {
+            Animator animator = cible.GetComponent<Animator>();
+            Renderer renderer = cible.GetComponent<Renderer>();
+
+            animator.enabled = false;
+            cible.enabled = false;
+        }
 
         if (!hasSpawnedNextTable && ciblesTombees >= cibles.Count)
         {
@@ -37,5 +48,6 @@ public class Table : MonoBehaviour
             cible.ResetCible();
         }
     }
+
 
 }
