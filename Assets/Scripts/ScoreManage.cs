@@ -25,4 +25,15 @@ public class ScoreManager : MonoBehaviour
         scoreText.text = "Score : " + score;
     }
 
+    public void SaveBestScore()
+    {
+        int bestScore = PlayerPrefs.GetInt("BestScore", 0);
+        if (score > bestScore)
+        {
+            PlayerPrefs.SetInt("BestScore", score);
+            PlayerPrefs.Save();
+        }
+    }
+
+
 }

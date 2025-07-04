@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     private bool gameIsRunning = false;
     public GameObject restartButton;
     public BallShooter shooter;
+    public TextMeshProUGUI bestScoreText;
 
     public void StartGame()
     {
@@ -44,6 +45,13 @@ public class GameManager : MonoBehaviour
         timerText.text = "Terminus";
         shooter.canShoot = false;
         restartButton.SetActive(true);
+
+        bestScoreText.gameObject.SetActive(true);
+
+        ScoreManager.Instance.SaveBestScore();
+        int bestScore = PlayerPrefs.GetInt("BestScore", 0);
+
+        bestScoreText.text = "Meilleur score : " + bestScore;
     }
 
     public void RestartGame()
@@ -55,5 +63,6 @@ public class GameManager : MonoBehaviour
         restartButton.SetActive(false);
         Table.Instance.ResetTable();
         Table.Instance.cibleSphere.SetActive(true);
+        bestScoreText.gameObject.SetActive(false);
     }
 }
